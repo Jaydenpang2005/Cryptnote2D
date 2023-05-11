@@ -2,18 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
+using UnityEngine.Networking;
 
-public class Monke_Y : MonoBehaviour
+public class Monke_Y : NetworkBehaviour
 {
+    public GameObject Hitbox_Punch;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (!isLocalPlayer) return;
+        if(Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("attack");
+        }
     }
 }
