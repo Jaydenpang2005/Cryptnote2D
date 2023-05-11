@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97713674f63f71b45bff83bab3c8def8, type: 3}
+  m_Name: Phantom
+  m_EditorClassIdentifier: 
+  id: 2
+  displayName: Phantom
+  icon: {fileID: 21300000, guid: dcea51d6065d64246aeec467afeff684, type: 3}
+  introPrefab: {fileID: 858053421204972208, guid: d0885f19705195e49919296ed8a78e46, type: 3}
+  gameplayPrefab: {fileID: 4172480300910712790, guid: bf4ff570c78027c47a588cef5e0af046, type: 3}
