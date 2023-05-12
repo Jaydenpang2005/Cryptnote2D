@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -4832540350204004298}
   - component: {fileID: 5575620493031457393}
   - component: {fileID: 7143895793834378071}
+  - component: {fileID: 2104439426773108556}
   m_Layer: 0
   m_Name: Archer
   m_TagString: Untagged
@@ -196,3 +197,19 @@ MonoBehaviour:
   spriteRenderer: {fileID: 6621744326315227494}
   arrow: {fileID: 5595770912649948681, guid: d06889f80d7dfde41a801e7a0348d8a2, type: 3}
   attackCoolDownMax: 0.5
+--- !u!58 &2104439426773108556
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8853242706901990301}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.32

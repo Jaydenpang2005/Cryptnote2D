@@ -283,8 +283,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81aacf460419da24fb174109c499fc31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PrefabToSpawn: {fileID: 2872434333944926409}
-  SpawnPrefabAutomatically: 0
+  punchForce: 10
+  punchMask:
+    serializedVersion: 2
+    m_Bits: 1
+  handCollider: {fileID: 8184992156792665662}
 --- !u!114 &-7863499146996494370
 MonoBehaviour:
   m_ObjectHideFlags: 0

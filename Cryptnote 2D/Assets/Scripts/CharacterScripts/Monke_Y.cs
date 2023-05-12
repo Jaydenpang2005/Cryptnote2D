@@ -6,15 +6,21 @@ using UnityEngine.Networking;
 
 public class Monke_Y : NetworkBehaviour
 {
-    public GameObject Hitbox_Punch;
-    // Start is called before the first frame update
+    public float punchForce = 10f;
+    public LayerMask punchMask;
+    public Collider2D handCollider;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetMouseButtonDown(0))
-        {
-            Debug.Log("attack");
+    void Update () {
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            Collider[] hitColliders = Physics.OverlapSphere(handCollider.transform.position, 0.5f, punchMask);
+            int i = 0;
+            while (i < hitColliders.Length) {
+                Rigidbody rb = hitColliders[i].GetComponent<Rigidbody>();
+                if (rb != null) {
+                    rb.AddForce(transform.forward * punchForce);
+                }
+                i++;
+            }
         }
     }
 }
