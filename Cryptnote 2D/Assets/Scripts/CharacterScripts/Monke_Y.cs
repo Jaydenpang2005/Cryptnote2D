@@ -12,7 +12,6 @@ public class Monke_Y : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isLocalPlayer) return;
         if(Input.GetMouseButtonDown(0))
         {
             Debug.Log("attack");
