@@ -49,7 +49,7 @@ public class Monke_Y : NetworkBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0))
         {
             if(IsClient){PunchServerRpc();}
             if(IsServer){PunchClientRpc();}
