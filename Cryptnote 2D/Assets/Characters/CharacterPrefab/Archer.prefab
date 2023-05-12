@@ -193,4 +193,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrowQuantity: 0
+  spriteRenderer: {fileID: 6621744326315227494}
   arrow: {fileID: 5595770912649948681, guid: d06889f80d7dfde41a801e7a0348d8a2, type: 3}
+  attackCoolDownMax: 0.5
