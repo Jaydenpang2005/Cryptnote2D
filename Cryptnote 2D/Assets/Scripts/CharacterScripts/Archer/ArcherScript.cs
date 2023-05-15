@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 
-public class ArcherScript : MonoBehaviour
+public class ArcherScript : NetworkBehaviour
 {
     // Start is called before the first frame update
 
@@ -37,31 +38,38 @@ public class ArcherScript : MonoBehaviour
 
 
     private void OnKeyDownHandler(){
+        if(!IsOwner) { return; }
 
-        if(Input.GetKey(KeyCode.E)) {      
-            
+        if(Input.GetKey(KeyCode.E)) {         
             //when pressed E
-            if(attackCoolDown <= 0){
-
-                //Spawn an arrow in Archer position, Archer rotation
-                Instantiate(arrow, transform.position, transform.rotation);
-
-                //set cool down
-                attackCoolDown = attackCoolDownMax;
-    
-            }else{
-
-                //not yet cool down
-                Debug.Log("dont be too hasty!");
-
-            }
-
+            if(IsClient) { ShootServerRpc(); }
+            if(IsServer) { ShootServerRpc(); }
         };
 
     }
 
-    private void OnClickHandler(){
+//RPCs
 
+    [ServerRpc]
+    void ShootServerRpc() { Shoot(); }
+
+    void Shoot()
+    {
+        if(attackCoolDown <= 0){
+            //Spawn an arrow in Archer position, Archer rotation
+            var instantiatedArrow = Instantiate(arrow, transform.position, transform.rotation);
+            instantiatedArrow.GetComponent<NetworkObject>().Spawn();
+            Debug.Log("Shot");
+
+            //set cool down
+            attackCoolDown = attackCoolDownMax;
+
+        }else{
+
+            //not yet cool down
+            Debug.Log("dont be too hasty!");
+
+        }
     }
 
     private void CoolDownTimer(){
