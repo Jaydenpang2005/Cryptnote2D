@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStat : MonoBehaviour
+public class CharStatController : MonoBehaviour
 {
     public int health;
 

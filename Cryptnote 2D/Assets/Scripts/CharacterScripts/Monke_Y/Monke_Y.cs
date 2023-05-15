@@ -23,7 +23,7 @@ public class Monke_Y : NetworkBehaviour
                 Vector2 direction = hitNetworkObject.transform.position - handTransform.position;
                 if (hitNetworkObject != null && hitNetworkObject != this.NetworkObject)
                 {
-                    hitNetworkObject.GetComponent<PlayerStat>().LoseHealth(20);
+                    hitNetworkObject.GetComponent<CharStatController>().LoseHealth(20);
                     hitNetworkObject.GetComponent<Rigidbody2D>().AddForce(direction.normalized * punchForce, ForceMode2D.Impulse);
                 }
             }
@@ -41,7 +41,7 @@ public class Monke_Y : NetworkBehaviour
                 Vector2 direction = hitNetworkObject.transform.position - handTransform.position;
                 if (hitNetworkObject != null && hitNetworkObject != this.NetworkObject)
                 {
-                    hitNetworkObject.GetComponent<PlayerStat>().LoseHealth(20);
+                    hitNetworkObject.GetComponent<CharStatController>().LoseHealth(20);
                     hitNetworkObject.GetComponent<Rigidbody2D>().AddForce(direction.normalized * punchForce, ForceMode2D.Impulse);
                 }
             }
