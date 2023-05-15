@@ -28,8 +28,7 @@ public class ArcherScript : NetworkBehaviour
     void Update()
     {
         CoolDownTimer();            //timing attack cool down
-
-        OnKeyDownHandler();         //to handle pressing key
+        OnKeyDownHandler();
 
     }
 
@@ -40,10 +39,9 @@ public class ArcherScript : NetworkBehaviour
     private void OnKeyDownHandler(){
         if(!IsOwner) { return; }
 
-        if(Input.GetKey(KeyCode.E)) {         
+        if(Input.GetKeyDown(KeyCode.E)) {         
             //when pressed E
-            if(IsClient) { ShootServerRpc(); }
-            if(IsServer) { ShootServerRpc(); }
+            ShootServerRpc();
         };
 
     }
@@ -59,7 +57,6 @@ public class ArcherScript : NetworkBehaviour
             //Spawn an arrow in Archer position, Archer rotation
             var instantiatedArrow = Instantiate(arrow, transform.position, transform.rotation);
             instantiatedArrow.GetComponent<NetworkObject>().Spawn();
-            Debug.Log("Shot");
 
             //set cool down
             attackCoolDown = attackCoolDownMax;
