@@ -11,26 +11,20 @@ public class Monke_Y : NetworkBehaviour
     public LayerMask punchLayerMask;
     public Transform handTransform;
 
+//RPCs
     [ServerRpc]
     void PunchServerRpc()
     {
-        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(handTransform.position, punchRadius, punchLayerMask);
-        foreach (Collider2D hitCollider in hitColliders)
-        {
-            NetworkObject hitNetworkObject = hitCollider.GetComponent<NetworkObject>();
-            if (hitNetworkObject != null)
-            {
-                Vector2 direction = hitNetworkObject.transform.position - handTransform.position;
-                if (hitNetworkObject != null && hitNetworkObject != this.NetworkObject)
-                {
-                    hitNetworkObject.GetComponent<CharStatController>().LoseHealth(20);
-                    hitNetworkObject.GetComponent<Rigidbody2D>().AddForce(direction.normalized * punchForce, ForceMode2D.Impulse);
-                }
-            }
-        }
+        Punch();
     }
     [ClientRpc]
     void PunchClientRpc()
+    {
+        Punch();
+    }
+
+//Functions
+    void Punch()
     {
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(handTransform.position, punchRadius, punchLayerMask);
         foreach (Collider2D hitCollider in hitColliders)

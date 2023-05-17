@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7288775816246949097}
-  - component: {fileID: 7982882760605298242}
   m_Layer: 0
   m_Name: Hitbox_Punch
   m_TagString: Untagged
@@ -32,19 +31,6 @@ Transform:
   m_Father: {fileID: 2493044649233578162}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7982882760605298242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2872434333944926409}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83dc889c7fe218d4993c07948cbfe70c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 5
 --- !u!1 &4201566622238633115
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,7 +179,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 3
-  m_LinearDrag: 1
+  m_LinearDrag: 6
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -256,7 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81aacf460419da24fb174109c499fc31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  punchForce: 15
+  punchForce: 30
   punchRadius: 0.5
   punchLayerMask:
     serializedVersion: 2

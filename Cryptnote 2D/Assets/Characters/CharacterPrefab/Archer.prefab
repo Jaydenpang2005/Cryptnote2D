@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5575620493031457393}
   - component: {fileID: 7143895793834378071}
   - component: {fileID: 2104439426773108556}
+  - component: {fileID: 395019053509076370}
   m_Layer: 0
   m_Name: Archer
   m_TagString: Untagged
@@ -135,7 +136,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 3
-  m_LinearDrag: 1
+  m_LinearDrag: 6
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -213,3 +214,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
+--- !u!114 &395019053509076370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8853242706901990301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 532e452c78e0ebb4cb308b96476b4a62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 50
